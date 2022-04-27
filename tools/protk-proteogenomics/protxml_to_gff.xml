@@ -2,8 +2,6 @@
     <description>Export Proteomics Data to GFF</description>
     <requirements>
         <container type="docker">iracooke/protk-1.4.3</container>
-        <requirement type="package" version="1.4.3">protk</requirement>
-        <requirement type="package" version="2.2.29">blast+</requirement>
     </requirements>
     <stdio>
         <exit_code range="1:"   level="fatal"   description="Failure" />
@@ -99,11 +97,11 @@
     <tests>
       <test>
           <param name="source_select" value="input_ref"/>
-          <param name="fasta_file" value="small_prot.fasta" format="fasta"/>
+          <param name="fasta_file" value="small_prot.fasta"/>
 
-          <param name="protxml_file" value="small.prot.xml" format="protxml"/>
-          <param name="gene_file" value="small_combined.gff" format="gff3"/>
-          <output name="output" format="gff3">
+          <param name="protxml_file" value="small.prot.xml"/>
+          <param name="gene_file" value="small_combined.gff"/>
+          <output name="output">
               <assert_contents>
                   <has_text text="polypeptide" />
               </assert_contents>
