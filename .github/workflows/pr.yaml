@@ -5,11 +5,11 @@ env:
   GALAXY_BRANCH: release_22.05
   MAX_CHUNKS: 4
   MAX_FILE_SIZE: 1M
-concurrency:
+# concurrency:
   # Group runs by PR, but keep runs on the default branch separate
   # because we do not want to cancel ToolShed uploads
-  group: pr-${{ (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main') && github.run_number || github.ref }}
-  cancel-in-progress: true
+  # group: pr-${{ (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main') && github.run_number || github.ref }}
+  # cancel-in-progress: true
 jobs:
   call-tools-iuc-pr-workflow:
     uses: tomharrop/tools-iuc/.github/workflows/pr.yaml@8402a2c4832669f18b633f0a7103087d513bfdf4
