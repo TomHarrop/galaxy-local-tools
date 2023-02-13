@@ -74,6 +74,7 @@
             -o BIN_REFINEMENT
             ## Only run bin_refinement on bins with contigs
             \${bin_string}
+
     ]]></command>
     <inputs>
         <param name="metagenome" format="fasta" type="data" label="Metagenome" help="Metagenome co-assembly for binning" />
